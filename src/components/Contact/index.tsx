@@ -31,7 +31,7 @@ const Contact = () => {
       const result = await response.json();
 
       if (result.success) {
-        toast.success("Message sent successfully! We'll get back to you soon.");
+        toast.success("Message sent successfully! We&apos;ll get back to you soon.");
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         toast.error("Failed to send message. Please try again.");
@@ -56,10 +56,10 @@ const Contact = () => {
               data-wow-delay=".15s"
             >
               <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Let's Build Something Great Together
+                Let&apos;s Build Something Great Together
               </h2>
               <p className="mb-12 text-base font-medium text-body-color">
-                Have a project in mind? We'd love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.
+                Have a project in mind? We&apos;d love to hear from you! Fill out the form below, and our team will get back to you as soon as possible.
               </p>
               <form onSubmit={handleSubmit}>
                 <div className="-mx-4 flex flex-wrap">

@@ -1,13 +1,9 @@
 import dynamic from "next/dynamic";
 import { Metadata } from "next";
 
-// Dynamically import Breadcrumb and Contact to disable SSR
-const Breadcrumb = dynamic(() => import("@/components/Common/Breadcrumb"), {
-  ssr: false,
-});
-const Contact = dynamic(() => import("@/components/Contact"), {
-  ssr: false,
-});
+// Dynamically import Breadcrumb and Contact
+const Breadcrumb = dynamic(() => import("@/components/Common/Breadcrumb"));
+const Contact = dynamic(() => import("@/components/Contact"));
 
 export const metadata: Metadata = {
   title: "Contact Us | Next Craft Solution",

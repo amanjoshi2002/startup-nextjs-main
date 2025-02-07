@@ -15,7 +15,7 @@ const AboutPage = () => {
     <>
       <Breadcrumb
         pageName="About Page"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In varius eros eget sapien consectetur ultrices. Ut quis dapibus libero."
+        description="We specialize in building high-performance, scalable websites and web applications. Our digital solutions drive results and elevate your online presence. Our expertise extends to custom software development, Android and iOS app development, social media solutions, e-commerce platforms, and enterprise-level applications tailored to your business needs."
       />
       <AboutSectionOne />
       <AboutSectionTwo />
