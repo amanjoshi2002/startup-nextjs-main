@@ -3,6 +3,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppFloat from "@/components/Common/WhatsAppFloat";
 import { Inter } from "next/font/google";
 import "../styles/index.css";
 import React from "react";
@@ -48,6 +49,7 @@ export default function RootLayout({
           {children}
           <Footer />
           <ScrollToTop />
+          <WhatsAppFloat />
         </Providers>
       </body>
     </html>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ExternalLink, Code, Monitor, Smartphone, X } from 'lucide-react';
 import Image from 'next/image';
 import Breadcrumb from '@/components/Common/Breadcrumb';
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 interface Project {
   id: number;
@@ -155,13 +156,13 @@ const Portfolio = () => {
         pageName="Projects"
         description="Here are our projects. We specialize in building high-performance, scalable websites and web applications. From startups to enterprises, we craft digital solutions that drive results and elevate your online presence."
       />
-      <section className="py-12 md:py-24 bg-secondary-50 dark:bg-secondary-900" id="portfolio">
+      <section className="py-8 md:py-12 bg-secondary-50 dark:bg-secondary-900" id="portfolio">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8 md:mb-16"
+            className="text-center mb-6"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-secondary-900 dark:text-white mb-4">
               Our Portfolio
@@ -172,7 +173,7 @@ const Portfolio = () => {
           </motion.div>
 
           {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8 md:mb-12">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-4">
             {filters.map((filter) => (
               <motion.button
                 key={filter.id}
@@ -191,7 +192,7 @@ const Portfolio = () => {
           </div>
 
           {/* Project Grid */}
-          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <AnimatePresence>
               {filteredProjects.map((project: Project) => (
                 <motion.div
@@ -200,64 +201,65 @@ const Portfolio = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white dark:text-white dark:bg-black bg-secondary-800 rounded-2xl shadow-soft overflow-hidden group"
                 >
-                  <div className="relative aspect-video">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-primary-600/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-4">
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => setSelectedProject(project)}
-                        className="bg-white text-primary-600 px-4 py-2 rounded-lg flex items-center gap-2 dark:text-black"
+                  <CardContainer className="inter-var">
+                    <CardBody className=" bg-white relative group/card dark:hover:shadow-2xl dark:hover:shadow-blue-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-full h-auto rounded-xl p-6 border">
+                      <CardItem
+                        translateZ="50"
+                        className="text-xl font-bold text-neutral-600 dark:text-white"
                       >
-                        View Details
-                        <ExternalLink className="h-4 w-4" />
-                      </motion.button>
-                      <motion.a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="bg-blue-600 text-white px-4 py-2 rounded-lg flex items-center gap-2"
+                        {project.title}
+                      </CardItem>
+                      <CardItem
+                        as="p"
+                        translateZ="60"
+                        className="text-neutral-500 text-sm mt-2 dark:text-neutral-300"
                       >
-                        Visit Website
-                        <ExternalLink className="h-4 w-4" />
-                      </motion.a>
-                    </div>
-                  </div>
-
-                  <div className="p-4 md:p-6">
-                    <div className="flex items-center gap-2 text-primary-600 mb-2">
-                      {getCategoryIcon(project.category)}
-                      <span className="text-sm font-medium capitalize">
-                        {project.category}
-                      </span>
-                    </div>
-                    <h3 className="text-lg md:text-xl font-semibold text-secondary-900 dark:text-white mb-2">
-                      {project.title}
-                    </h3>
-                    <p className="text-sm md:text-base text-secondary-600 dark:text-secondary-300 mb-4">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech: string, index: number) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 md:px-3 md:py-1 bg-secondary-50 text-secondary-600 dark:bg-secondary-700 dark:text-secondary-200 rounded-full text-xs md:text-sm"
+                        {project.description}
+                      </CardItem>
+                      <CardItem translateZ="100" className="w-full mt-4">
+                        <div className="relative w-full h-[200px] sm:h-[250px]">
+                          <Image
+                            src={project.image}
+                            alt={project.title}
+                            fill
+                            className="object-contain rounded-xl group-hover/card:shadow-xl"
+                          />
+                        </div>
+                      </CardItem>
+                      <div className="flex justify-between items-center mt-8">
+                        <CardItem
+                          translateZ={20}
+                          as="button"
+                          onClick={() => setSelectedProject(project)}
+                          className="px-4 py-2 rounded-xl text-sm font-normal dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
                         >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                          View Details →
+                        </CardItem>
+                        <CardItem
+                          translateZ={20}
+                          as="a"
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-4 py-2 rounded-xl bg-blue-600 text-white text-sm font-bold hover:bg-blue-700"
+                        >
+                          Visit Site
+                        </CardItem>
+                      </div>
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {project.technologies.map((tech: string, index: number) => (
+                          <CardItem
+                            key={index}
+                            translateZ={30}
+                            className="px-2 py-1 bg-gray-100 dark:bg-gray-800 rounded-full text-xs"
+                          >
+                            {tech}
+                          </CardItem>
+                        ))}
+                      </div>
+                    </CardBody>
+                  </CardContainer>
                 </motion.div>
               ))}
             </AnimatePresence>
@@ -277,19 +279,19 @@ const Portfolio = () => {
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
-                  className="bg-white dark:bg-black rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+                  className="bg-white dark:bg-secondary-900 rounded-2xl shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <div className="relative aspect-video">
+                  <div className="relative h-[400px] bg-white dark:bg-secondary-900">
                     <Image
                       src={selectedProject.image}
                       alt={selectedProject.title}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                     <button
                       onClick={() => setSelectedProject(null)}
-                      className="absolute top-4 right-4 bg-white/90 dark:bg-secondary-700/90 p-2 rounded-full"
+                      className="absolute top-4 right-4 bg-white/90 dark:bg-secondary-800 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-secondary-700 transition-colors"
                     >
                       <X className="h-5 w-5 text-secondary-600 dark:text-secondary-200" />
                     </button>
@@ -299,7 +301,7 @@ const Portfolio = () => {
                     <h3 className="text-xl md:text-2xl font-bold text-secondary-900 dark:text-white mb-4">
                       {selectedProject.title}
                     </h3>
-                    <p className="text-sm md:text-base text-secondary-600 dark:text-white mb-6">
+                    <p className="text-sm md:text-base text-secondary-600 dark:text-secondary-300 mb-6">
                       {selectedProject.description}
                     </p>
 
@@ -311,7 +313,7 @@ const Portfolio = () => {
                         {selectedProject.technologies.map((tech: string, index: number) => (
                           <span
                             key={index}
-                            className="px-2 py-1 md:px-3 md:py-1 bg-secondary-50 text-secondary-600 dark:bg-secondary-700 dark:text-secondary-200 rounded-full text-xs md:text-sm"
+                            className="px-2 py-1 md:px-3 md:py-1 bg-secondary-100 dark:bg-secondary-800 text-secondary-600 dark:text-secondary-300 rounded-full text-xs md:text-sm"
                           >
                             {tech}
                           </span>
@@ -319,19 +321,19 @@ const Portfolio = () => {
                       </div>
                     </div>
 
-                    <div className="flex gap-4">
+                    <div className="flex gap-4 mt-6">
                       <a
                         href={selectedProject.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-primary-600 text-black dark:text-white px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-primary-700 transition-colors"
+                        className="inline-flex items-center gap-2 bg-blue-600 text-white px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-blue-700 transition-colors"
                       >
                         Visit Project
                         <ExternalLink className="h-4 w-4" />
                       </a>
                       <button
                         onClick={() => setSelectedProject(null)}
-                        className="inline-flex items-center gap-2 bg-secondary-200 text-secondary-700 dark:bg-secondary-700 dark:text-secondary-200 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-secondary-300 dark:hover:bg-secondary-600 transition-colors"
+                        className="inline-flex items-center gap-2 bg-secondary-100 dark:bg-secondary-800 text-secondary-700 dark:text-secondary-200 px-4 py-2 md:px-6 md:py-3 rounded-lg hover:bg-secondary-200 dark:hover:bg-secondary-700 transition-colors"
                       >
                         Close
                       </button>

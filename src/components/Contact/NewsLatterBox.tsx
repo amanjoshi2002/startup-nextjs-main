@@ -2,116 +2,98 @@
 
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const NewsLatterBox = () => {
   const { theme, setTheme } = useTheme();
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-  });
 
   useEffect(() => {
-    // Ensure theme is set on the client side
     if (!theme) {
-      setTheme("light"); // or "dark", depending on your default
+      setTheme("light");
     }
   }, [theme, setTheme]);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch("https://api.staticforms.xyz/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          accessKey: "73982eae-aa47-4d99-8007-0961b2ea731e", // Replace with your access key
-          ...formData,
-          replyTo: "@", // Reply to the user's email
-        }),
-      });
-
-      const result = await response.json();
-
-      if (result.success) {
-        toast.success("Subscribed successfully! You'll receive our updates.");
-        setFormData({ name: "", email: "" }); // Clear the form
-      } else {
-        toast.error("Failed to subscribe. Please try again.");
-      }
-    } catch (error) {
-      toast.error("An error occurred. Please try again later.");
-    }
-  };
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
 
   return (
     <div className="relative z-10 rounded-sm bg-white p-8 shadow-three dark:bg-gray-dark sm:p-11 lg:p-8 xl:p-11">
       <h3 className="mb-4 text-2xl font-bold leading-tight text-black dark:text-white">
-        Subscribe to receive future updates
+        Get in Touch
       </h3>
       <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
-        Stay up to date with the latest news, updates, and resources from our team. No spam, we promise!
+        Feel free to reach out to us through any of these channels. We're here to help!
       </p>
-      <form onSubmit={handleSubmit}>
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 md:w-1/2">
-            <div className="mb-8">
-              <label
-                htmlFor="name"
-                className="mb-3 block text-sm font-medium text-dark dark:text-white"
-              >
-                Your Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter your name"
-                value={formData.name}
-                onChange={handleChange}
-                className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                required
-              />
-            </div>
+      
+      <div className="space-y-6">
+        {/* Phone Number */}
+        <div className="flex items-center space-x-4">
+          <div className="flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-primary bg-opacity-5 text-primary">
+            <Phone size={32} className="text-primary" />
           </div>
-          <div className="w-full px-4 md:w-1/2">
-            <div className="mb-8">
-              <label
-                htmlFor="email"
-                className="mb-3 block text-sm font-medium text-dark dark:text-white"
-              >
-                Your Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email"
-                value={formData.email}
-                onChange={handleChange}
-                className="border-stroke w-full rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                required
-              />
-            </div>
-          </div>
-          <div className="w-full px-4">
-            <button
-              type="submit"
-              className="rounded-sm bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark"
+          <div>
+            <h4 className="mb-1 text-lg font-semibold text-black dark:text-white">
+              Phone Number
+            </h4>
+            <a 
+              href="tel:+91 7972752909" 
+              className="text-base text-body-color dark:text-body-color-dark hover:text-primary"
             >
-              Subscribe
-            </button>
+              +91 79727 52909
+            </a>
           </div>
         </div>
-      </form>
-      <ToastContainer position="top-right" autoClose={5000} />
+
+        {/* WhatsApp */}
+        <div className="flex items-center space-x-4">
+          <div className="flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-primary bg-opacity-5 text-primary">
+            <MessageCircle size={32} className="text-primary" />
+          </div>
+          <div>
+            <h4 className="mb-1 text-lg font-semibold text-black dark:text-white">
+              WhatsApp
+            </h4>
+            <a 
+              href="https://wa.me/917972752909" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-base text-body-color dark:text-body-color-dark hover:text-primary"
+            >
+              +91 79727 52909
+            </a>
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center space-x-4">
+          <div className="flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-primary bg-opacity-5 text-primary">
+            <Mail size={32} className="text-primary" />
+          </div>
+          <div>
+            <h4 className="mb-1 text-lg font-semibold text-black dark:text-white">
+              Email Address
+            </h4>
+            <a 
+              href="mailto:nextcraftsolution@gmail.com" 
+              className="text-base text-body-color dark:text-body-color-dark hover:text-primary"
+            >
+              nextcraftsolution@gmail.com
+            </a>
+          </div>
+        </div>
+
+        {/* Location */}
+        <div className="flex items-center space-x-4">
+          <div className="flex h-[60px] w-[60px] items-center justify-center rounded-2xl bg-primary bg-opacity-5 text-primary">
+            <MapPin size={32} className="text-primary" />
+          </div>
+          <div>
+            <h4 className="mb-1 text-lg font-semibold text-black dark:text-white">
+              Location
+            </h4>
+            <p className="text-base text-body-color dark:text-body-color-dark">
+              Goa, India
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div>
         <span className="absolute left-2 top-7">

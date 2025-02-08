@@ -1,6 +1,24 @@
+"use client";
+
 import Link from "next/link";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
 
 const Hero = () => {
+  const words = [
+    {
+      text: "Next",
+      className: "text-3xl sm:text-4xl md:text-5xl font-bold",
+    },
+    {
+      text: "Craft",
+      className: "text-3xl sm:text-4xl md:text-5xl font-bold",
+    },
+    {
+      text: "Solutions",
+      className: "text-3xl sm:text-4xl md:text-5xl font-bold text-primary dark:text-primary",
+    },
+  ];
+
   return (
     <>
       <section
@@ -11,21 +29,27 @@ const Hero = () => {
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4">
               <div className="mx-auto max-w-[800px] text-center">
-                <h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-                  Crafting Digital Excellence with Next Craft Solutions
-                </h1>
+                <div className="mb-5 flex flex-col items-center">
+                  <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl mb-2">
+                    Crafting Digital Excellence with
+                  </h1>
+                  <div className="flex justify-center w-full">
+                    <TypewriterEffectSmooth words={words} />
+                  </div>
+                </div>
                 <p className="mb-12 text-base !leading-relaxed text-body-color dark:text-body-color-dark sm:text-lg md:text-xl">
-                We specialize in building high-performance, scalable websites and web applications. From startups to enterprises, we craft digital solutions that drive results and elevate your online presence. Our expertise extends to custom software development, Android and iOS app development, social media solutions, e-commerce platforms, and enterprise-level applications tailored to your business needs.                </p>
+                  We specialize in building high-performance, scalable websites and web applications. From startups to enterprises, we craft digital solutions that drive results and elevate your online presence. Our expertise extends to custom software development, Android and iOS app development, social media solutions, e-commerce platforms, and enterprise-level applications tailored to your business needs.
+                </p>
                 <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
                   <Link
                     href="/projects"
-                    className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
+                    className="rounded-xl bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 min-w-[160px] sm:min-w-[180px]"
                   >
                     🚀 Our Projects
                   </Link>
                   <Link
                     href="/contact"
-                    className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+                    className="inline-block rounded-xl bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5 min-w-[160px] sm:min-w-[180px]"
                   >
                     📩 Get in Touch
                   </Link>
