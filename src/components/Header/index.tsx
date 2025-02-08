@@ -75,9 +75,10 @@ const Header = () => {
                     quality={100}
                     priority
                   />
-                  <span className="text-xl font-bold text-dark dark:text-white">
-                    Next Craft Solution
-                  </span>
+                  <div className="hidden sm:flex flex-col text-xl font-bold text-dark dark:text-white">
+                    <span>Next Craft</span>
+                    <span>Solution</span>
+                  </div>
                 </div>
               </Link>
             </div>
