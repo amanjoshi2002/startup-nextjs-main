@@ -19,7 +19,7 @@ const NewsLatterBox = () => {
         Get in Touch
       </h3>
       <p className="mb-11 border-b border-body-color border-opacity-25 pb-11 text-base leading-relaxed text-body-color dark:border-white dark:border-opacity-25">
-        Feel free to reach out to us through any of these channels. We're here to help!
+        Feel free to reach out to us through any of these channels. We&apos;re here to help!
       </p>
       
       <div className="space-y-6">
@@ -33,7 +33,7 @@ const NewsLatterBox = () => {
               Phone Number
             </h4>
             <a 
-              href="tel:+91 7972752909" 
+              href="tel:+917972752909" 
               className="text-base text-body-color dark:text-body-color-dark hover:text-primary"
             >
               +91 79727 52909
