@@ -1,16 +1,23 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const NewsLatterBox = () => {
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
   });
+
+  useEffect(() => {
+    // Ensure theme is set on the client side
+    if (!theme) {
+      setTheme("light"); // or "dark", depending on your default
+    }
+  }, [theme, setTheme]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

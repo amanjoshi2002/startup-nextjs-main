@@ -34,71 +34,45 @@ const Portfolio = () => {
   
   // Projects array remains the same as in your original code
    const projects: Project[] = [
-    {
-      id: 1,
-      title: 'Enterprise SaaS Platform',
-      category: 'Landing',
-      image: '/images/blog/blog-details-01.jpg',
-      technologies: ['React', 'Node.js', 'PostgreSQL'],
-      description: 'Enterprise-grade SaaS solution for workflow automation and team collaboration.',
-      stats: { users: '10K+', rating: 4.8 },
-      link: '#'
-    },
-    {
-      id: 2,
-      title: 'E-Commerce Platform',
-      category: 'web',
-      image: '/api/placeholder/600/400',
-      technologies: ['Next.js', 'MongoDB', 'AWS'],
-      description: 'Modern e-commerce solution with AI-powered recommendations.',
-      stats: { users: '50K+', rating: 4.9 },
-      link: '#'
-    },
-    {
-      id: 3,
-      title: 'Healthcare Mobile App',
-      category: 'mobile',
-      image: '/api/placeholder/600/400',
-      technologies: ['React Native', 'Firebase', 'Node.js'],
-      description: 'Comprehensive healthcare management mobile application.',
-      stats: { users: '25K+', rating: 4.7 },
-      link: '#'
-    },
+    
     {
       id: 4,
       title: 'Interior Designer Landing Page',
       category: 'Landing',
-      image: '/images/projects/interior-designer.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/interor.png',
+      technologies: ['Nextjs' ,'tailwind'],
       description: 'A modern and responsive landing page for interior designers.',
       stats: { users: '5K+', rating: 4.5 },
       link: 'https://interior-hazel.vercel.app/'
+
     },
     {
       id: 5,
       title: 'WaterSport Landing Page',
       category: 'Landing',
       image: '/images/projects/watersport.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      technologies: ['Nextjs' ,'tailwind'],
       description: 'A vibrant landing page for water sports enthusiasts.',
       stats: { users: '7K+', rating: 4.6 },
       link: 'https://water-blue.vercel.app/'
+
     },
     {
       id: 6,
       title: 'Computer Service Landing Page',
       category: 'Landing',
-      image: '/images/projects/computer-service.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/computer.png',
+      technologies: ['Nextjs' ,'tailwind'],
       description: 'A professional landing page for computer repair services.',
       stats: { users: '8K+', rating: 4.7 },
       link: 'https://ts-final-website.vercel.app/'
+
     },
     {
       id: 7,
-      title: 'E-Commerce Page',
+      title: 'Printing website',
       category: 'web',
-      image: '/images/projects/ecommerce.jpg',
+      image: '/images/projects/ecommerce.png',
       technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
       description: 'A fully functional e-commerce platform with modern design.',
       stats: { users: '15K+', rating: 4.8 },
@@ -108,18 +82,19 @@ const Portfolio = () => {
       id: 8,
       title: 'Printing Landing Page',
       category: 'Landing',
-      image: '/images/projects/printing.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/printing.png',
+      technologies: ['Nextjs' ,'tailwind'],
       description: 'A landing page for a printing service business.',
       stats: { users: '6K+', rating: 4.4 },
       link: 'https://www.damodarprintzone.in/'
+
     },
     {
       id: 9,
       title: 'Tour and Travel Landing Page',
       category: 'Landing',
-      image: '/images/projects/tour-travel.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/tour-travel.png',
+      technologies: ['Nextjs','tailwind'],
       description: 'A travel agency landing page with a clean and inviting design.',
       stats: { users: '9K+', rating: 4.6 },
       link: 'https://www.atmaramtourandtravels.in/'
@@ -128,18 +103,19 @@ const Portfolio = () => {
       id: 10,
       title: 'Shop Website',
       category: 'web',
-      image: '/images/projects/shop.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/shop.png',
+      technologies: ['Nextjs','tailwind',"mongodb"],
       description: 'An online store for military gear and accessories.',
       stats: { users: '12K+', rating: 4.7 },
       link: 'https://www.goamilitarystore.in/'
+
     },
     {
       id: 11,
       title: 'Rent a Car Landing Page',
       category: 'Landing',
-      image: '/images/projects/rent-car.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/rent-car.png',
+      technologies: ['Nextjs','tailwind'],
       description: 'A sleek landing page for a car rental service.',
       stats: { users: '10K+', rating: 4.5 },
       link: 'https://rent-a-car-lilac-chi.vercel.app/'
@@ -148,8 +124,8 @@ const Portfolio = () => {
       id: 12,
       title: 'Portfolio Landing Page',
       category: 'Landing',
-      image: '/images/projects/portfolio.jpg',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: '/images/projects/portfolio.png',
+      technologies: ['Nextjs,tailwind'],
       description: 'A professional portfolio website for showcasing work.',
       stats: { users: '20K+', rating: 4.9 },
       link: 'https://www.nextcraftsolution.site/'
@@ -327,36 +303,19 @@ const Portfolio = () => {
                       {selectedProject.description}
                     </p>
 
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6">
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 dark:text-white mb-2">
-                          Statistics
-                        </h4>
-                        <div className="space-y-2">
-                          <div className="flex items-center gap-2">
-                            <span className="text-secondary-600 dark:text-white">Active Users:</span>
-                            <span className="font-medium">{selectedProject.stats.users}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="text-secondary-600 dark:text-secondary-300">User Rating:</span>
-                            <span className="font-medium">{selectedProject.stats.rating}/5.0</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 dark:text-white mb-2">
-                          Technologies
-                        </h4>
-                        <div className="flex flex-wrap gap-2">
-                          {selectedProject.technologies.map((tech: string, index: number) => (
-                            <span
-                              key={index}
-                              className="px-2 py-1 md:px-3 md:py-1 bg-secondary-50 text-secondary-600 dark:bg-secondary-700 dark:text-secondary-200 rounded-full text-xs md:text-sm"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
+                    <div>
+                      <h4 className="font-semibold text-secondary-900 dark:text-white mb-2">
+                        Technologies
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedProject.technologies.map((tech: string, index: number) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 md:px-3 md:py-1 bg-secondary-50 text-secondary-600 dark:bg-secondary-700 dark:text-secondary-200 rounded-full text-xs md:text-sm"
+                          >
+                            {tech}
+                          </span>
+                        ))}
                       </div>
                     </div>
 
