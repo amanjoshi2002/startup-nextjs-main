@@ -33,11 +33,14 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
-      <head />
+      <head>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Welcome to Next Craft Solution, your partner in building high-performance, scalable websites and web applications." />
+        <meta name="author" content="Next Craft Solution" />
+        <link rel="canonical" href="https://nextcraftsolution.site" />
+        <title>Next Craft Solution</title>
+      </head>
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
