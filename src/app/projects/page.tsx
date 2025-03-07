@@ -130,6 +130,16 @@ const Portfolio = () => {
       description: 'A professional portfolio website for showcasing work.',
       stats: { users: '20K+', rating: 4.9 },
       link: 'https://www.nextcraftsolution.site/'
+    },
+    {
+      id: 13,
+      title: 'Dine and Restaurants Landing Page',
+      category: 'Landing',
+      image: '/images/projects/DINE.png',
+      technologies: ['Nextjs,tailwind'],
+      description: 'A Dine and Restaurant page showing their services offered ',
+      stats: { users: '20K+', rating: 4.9 },
+      link: 'https://resturant-and-dine.vercel.app/'
     }
   ];
 
