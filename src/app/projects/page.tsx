@@ -35,73 +35,28 @@ const Portfolio = () => {
   
   // Projects array remains the same as in your original code
    const projects: Project[] = [
-    
+    {
+      id: 1,
+      title: 'Dine and Restaurants Landing Page',
+      category: 'Landing',
+      image: '/images/projects/miri.png',
+      technologies: ['Nextjs,tailwind'],
+      description: 'A Dine and Restaurant page showing their services offered ',
+      stats: { users: '20K+', rating: 4.9 },
+      link: 'https://miriglobalfusiondining.in/'
+    },
+    {
+      id: 2,
+      title: 'Lens of Life Creations Website',
+      category: 'Portfolio',
+      image: '/images/projects/lensoflife.png',
+      technologies: ['Next.js', 'Tailwind CSS'],
+      description: 'A visually engaging portfolio site for a Goa-based photography and videography studio, showcasing their work in weddings, pre-weddings, and corporate events.',
+      stats: { users: '15K+', rating: 4.8 },
+      link: 'https://www.lensoflifecreations.in/'
+    },
     {
       id: 4,
-      title: 'Interior Designer Landing Page',
-      category: 'Landing',
-      image: '/images/projects/interor.png',
-      technologies: ['Nextjs' ,'tailwind'],
-      description: 'A modern and responsive landing page for interior designers.',
-      stats: { users: '5K+', rating: 4.5 },
-      link: 'https://interior-hazel.vercel.app/'
-
-    },
-    {
-      id: 5,
-      title: 'WaterSport Landing Page',
-      category: 'Landing',
-      image: '/images/projects/watersport.jpg',
-      technologies: ['Nextjs' ,'tailwind'],
-      description: 'A vibrant landing page for water sports enthusiasts.',
-      stats: { users: '7K+', rating: 4.6 },
-      link: 'https://water-blue.vercel.app/'
-
-    },
-    {
-      id: 6,
-      title: 'Computer Service Landing Page',
-      category: 'Landing',
-      image: '/images/projects/computer.png',
-      technologies: ['Nextjs' ,'tailwind'],
-      description: 'A professional landing page for computer repair services.',
-      stats: { users: '8K+', rating: 4.7 },
-      link: 'https://ts-final-website.vercel.app/'
-
-    },
-    {
-      id: 7,
-      title: 'Printing website',
-      category: 'web',
-      image: '/images/projects/ecommerce.png',
-      technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
-      description: 'A fully functional e-commerce platform with modern design.',
-      stats: { users: '15K+', rating: 4.8 },
-      link: 'https://printify-nextjs.vercel.app/'
-    },
-    {
-      id: 8,
-      title: 'Printing Landing Page',
-      category: 'Landing',
-      image: '/images/projects/printing.png',
-      technologies: ['Nextjs' ,'tailwind'],
-      description: 'A landing page for a printing service business.',
-      stats: { users: '6K+', rating: 4.4 },
-      link: 'https://www.damodarprintzone.in/'
-
-    },
-    {
-      id: 9,
-      title: 'Tour and Travel Landing Page',
-      category: 'Landing',
-      image: '/images/projects/tour-travel.png',
-      technologies: ['Nextjs','tailwind'],
-      description: 'A travel agency landing page with a clean and inviting design.',
-      stats: { users: '9K+', rating: 4.6 },
-      link: 'https://www.atmaramtourandtravels.in/'
-    },
-    {
-      id: 10,
       title: 'Shop Website',
       category: 'web',
       image: '/images/projects/shop.png',
@@ -112,7 +67,75 @@ const Portfolio = () => {
 
     },
     {
+      id: 6,
+      title: 'Printing Landing Page',
+      category: 'Landing',
+      image: '/images/projects/printing.png',
+      technologies: ['Nextjs' ,'tailwind'],
+      description: 'A landing page for a printing service business.',
+      stats: { users: '6K+', rating: 4.4 },
+      link: 'https://www.damodarprintzone.in/'
+
+    },
+    {
+      id: 5,
+      title: 'Tour and Travel Landing Page',
+      category: 'Landing',
+      image: '/images/projects/tour-travel.png',
+      technologies: ['Nextjs','tailwind'],
+      description: 'A travel agency landing page with a clean and inviting design.',
+      stats: { users: '9K+', rating: 4.6 },
+      link: 'https://www.atmaramtourandtravels.in/'
+    },
+    
+    {
       id: 11,
+      title: 'Interior Designer Landing Page',
+      category: 'Landing',
+      image: '/images/projects/interor.png',
+      technologies: ['Nextjs' ,'tailwind'],
+      description: 'A modern and responsive landing page for interior designers.',
+      stats: { users: '5K+', rating: 4.5 },
+      link: 'https://interior-hazel.vercel.app/'
+
+    },
+    {
+      id: 10,
+      title: 'WaterSport Landing Page',
+      category: 'Landing',
+      image: '/images/projects/watersport.jpg',
+      technologies: ['Nextjs' ,'tailwind'],
+      description: 'A vibrant landing page for water sports enthusiasts.',
+      stats: { users: '7K+', rating: 4.6 },
+      link: 'https://water-blue.vercel.app/'
+
+    },
+    {
+      id: 9,
+      title: 'Computer Service Landing Page',
+      category: 'Landing',
+      image: '/images/projects/computer.png',
+      technologies: ['Nextjs' ,'tailwind'],
+      description: 'A professional landing page for computer repair services.',
+      stats: { users: '8K+', rating: 4.7 },
+      link: 'https://ts-final-website.vercel.app/'
+
+    },
+    {
+      id: 8,
+      title: 'Printing website',
+      category: 'web',
+      image: '/images/projects/ecommerce.png',
+      technologies: ['Next.js', 'MongoDB', 'Tailwind CSS'],
+      description: 'A fully functional e-commerce platform with modern design.',
+      stats: { users: '15K+', rating: 4.8 },
+      link: 'https://printify-nextjs.vercel.app/'
+    },
+    
+   
+    
+    {
+      id: 7,
       title: 'Rent a Car Landing Page',
       category: 'Landing',
       image: '/images/projects/rent-car.png',
@@ -122,7 +145,7 @@ const Portfolio = () => {
       link: 'https://rent-a-car-lilac-chi.vercel.app/'
     },
     {
-      id: 12,
+      id: 3,
       title: 'Portfolio Landing Page',
       category: 'Landing',
       image: '/images/projects/portfolio.png',
@@ -130,17 +153,8 @@ const Portfolio = () => {
       description: 'A professional portfolio website for showcasing work.',
       stats: { users: '20K+', rating: 4.9 },
       link: 'https://www.nextcraftsolution.site/'
-    },
-    {
-      id: 13,
-      title: 'Dine and Restaurants Landing Page',
-      category: 'Landing',
-      image: '/images/projects/DINE.png',
-      technologies: ['Nextjs,tailwind'],
-      description: 'A Dine and Restaurant page showing their services offered ',
-      stats: { users: '20K+', rating: 4.9 },
-      link: 'https://resturant-and-dine.vercel.app/'
     }
+   
   ];
 
   const getCategoryIcon = (category: string) => {
