@@ -33,10 +33,10 @@ const NewsLatterBox = () => {
               Phone Number
             </h4>
             <a 
-              href="tel:+917972752909" 
+              href="tel:+919145559592" 
               className="text-base text-body-color dark:text-body-color-dark hover:text-primary"
             >
-              +91 79727 52909
+              +91 91455 59592 
             </a>
           </div>
         </div>
